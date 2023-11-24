@@ -40,7 +40,7 @@ public class Slideshow extends Element
 	{
 		List<ITexture> list = Arrays.asList(ressources);
 		Collections.shuffle(list);
-		ressources = (ITexture[]) list.toArray();
+		ressources = list.toArray(new ITexture[list.size()]);
 	}
 
 	public void update()

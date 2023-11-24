@@ -19,7 +19,7 @@ public class ActionOpenFolder implements IAction
 	@Override
 	public void perform(Object source, GuiCustom parent)
 	{
-		File toOpen = new File(Minecraft.getMinecraft().mcDataDir, folderName);
+		File toOpen = new File(Minecraft.getMinecraft().gameDir, folderName);
 
 		boolean isInMinecraftFolder = false;
 		try
@@ -27,7 +27,7 @@ public class ActionOpenFolder implements IAction
 			File parentFile = toOpen.getCanonicalFile();
 			while ((parentFile = parentFile.getParentFile()) != null)
 			{
-				if (parentFile.getCanonicalPath().equals(Minecraft.getMinecraft().mcDataDir.getCanonicalPath()))
+				if (parentFile.getCanonicalPath().equals(Minecraft.getMinecraft().gameDir.getCanonicalPath()))
 				{
 					isInMinecraftFolder = true;
 				}
